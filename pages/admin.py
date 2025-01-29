@@ -5,6 +5,11 @@ from modules.admin.visuals.show_main_dashboard import show_main_dashboard
 from modules.menu.create_menu import create_menu
 from modules.log_in.login import create_login
 from modules.log_in.cookie.cookie_manager import get_cookie_controller
+from streamlit_cookies_controller import CookieController
+
+
+controller = CookieController()
+
 
 BACKEND_URL = st.secrets.get("BACKEND_URL", "Not found")
 
@@ -15,8 +20,6 @@ with st.status("Valores en st.session_state"):
 placeholder = st.empty()
 
 if "username_logged" not in st.session_state:
-    controller = get_cookie_controller()
-
     token = controller.get("access_token")
 
     time.sleep(0.2)
