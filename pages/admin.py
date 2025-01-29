@@ -8,9 +8,9 @@ from modules.log_in.cookie.cookie_manager import get_cookie_controller
 
 BACKEND_URL = st.secrets.get("BACKEND_URL", "Not found")
 
-# with st.status("Valores en st.session_state"):
-#     for key in st.session_state:
-#         st.markdown(f"**Key**: `{key}`  \n**Value**: `{st.session_state[key]}`")
+with st.status("Valores en st.session_state"):
+    for key in st.session_state:
+        st.markdown(f"**Key**: `{key}`  \n**Value**: `{st.session_state[key]}`")
 
 placeholder = st.empty()
 
